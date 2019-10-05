@@ -5,18 +5,23 @@ export default class TodoForm extends Component {
     const {task, handleChange, handleSubmit, completed} = this.props;
 
     return (
-      <div>
+      <div className="card card-body my-3">
         <h2>Todo Form</h2>
-        <form
-          onSubmit={handleSubmit}
-        >
-          <input
-            type="text"
-            placeholder="Add tasks here"
-            value={task}
-            onChange={handleChange}
-          />
-          <button type="submit">Add</button>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <div className="input-group-prepend">
+              <div className="input-group-text bg-primary text-white">
+                <i className="fas fa-book" />
+              </div>
+            </div>
+              <input className="form-control text-capitalize"
+                type="text"
+                placeholder="Add tasks here"
+                value={task}
+                onChange={handleChange}
+              />
+          </div>
+          <button type="submit" className="btn btn-block btn-primary mt-3">Add</button>
         </form>
       </div>
     )

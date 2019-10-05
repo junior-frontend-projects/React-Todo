@@ -55,20 +55,24 @@ class App extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoForm
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          task={this.state.task}
-          completed={this.state.completed}
-        />
-        <TodoList
-          task={this.state.task}
-          clearCompleted={this.state.clearCompleted}
-          handleDelete={this.state.handleDelete}
-          handleEdit={this.state.handleEdit}
-        />
+      <div className="container">
+        <div className="row">
+          <div className="col-10 mx-auto col-md-8 mt-5">
+            <h2 className="text-capitalize text-center">Welcome to your Todo App!</h2>
+            <TodoForm
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              task={this.state.task}
+              completed={this.state.completed}
+            />
+            <TodoList
+              task={this.state.task}
+              clearCompleted={this.state.clearCompleted}
+              handleDelete={this.state.handleDelete}
+              handleEdit={this.state.handleEdit}
+            />
+          </div>
+        </div>
       </div>
     );
   }
